@@ -1,2 +1,7 @@
-# demo-zona-brackets
-Demo web para Zona Brackets — diseñada por eterlab.
+# Zona Brackets
+
+Sitio web demo diseñado por [eterlab.](https://eterlab.co)
+
+## Editar
+
+Modificá `index.html` para personalizar el sitio.
