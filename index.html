@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Zona Brackets — Atención dental de excelencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;cursor:pointer;background:transparent;color:inherit}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes widen{from{width:0}to{width:100%}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
+.reveal{opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.reveal.d1{animation-delay:.1s}
+.reveal.d2{animation-delay:.25s}
+.reveal.d3{animation-delay:.4s}
+.reveal.d4{animation-delay:.55s}
+.reveal.d5{animation-delay:.7s}
+.scroll-reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.scroll-reveal.visible{opacity:1;transform:translateY(0)}
+
+:root{--bg:#f5f9fc;--surface:#ffffff;--text:#1e3a5f;--muted:#64748b;--accent:#3b82f6;--accent-soft:rgba(59,130,246,0.1);--border:#dbeafe;--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.025em;line-height:1.05}
+nav{position:sticky;top:0;z-index:50;padding:20px 32px;backdrop-filter:blur(16px);background:rgba(255,255,255,0.8);border-bottom:1px solid var(--border)}
+nav .inner{display:flex;align-items:center;justify-content:space-between;max-width:1600px;margin:0 auto}
+nav .logo{font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-0.02em}
+nav .cta{font-size:13px;font-weight:600;padding:10px 20px;background:var(--text);color:var(--bg);border-radius:8px;transition:all .3s}
+nav .cta:hover{background:var(--accent);transform:translateY(-1px)}
+@media(max-width:768px){nav{padding:16px 20px}nav .logo{font-size:18px}}
+.hero{padding:80px 32px 60px;position:relative}
+.hero-inner{max-width:1600px;margin:0 auto}
+.hero-top{margin-bottom:48px}
+.hero-badge{display:inline-block;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:8px 16px;border-radius:999px;font-weight:600;margin-bottom:32px}
+.hero h1{font-size:clamp(48px,7vw,112px);margin-bottom:28px;font-weight:700;letter-spacing:-0.03em;max-width:1100px}
+.hero-about{font-size:20px;color:var(--muted);max-width:640px;line-height:1.6}
+.bento-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(140px,auto);gap:16px;margin-top:56px}
+.bento-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;overflow:hidden;position:relative;transition:all .4s cubic-bezier(.2,.8,.2,1)}
+.bento-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,0.08);border-color:var(--accent)}
+.bento-image{grid-column:span 3;grid-row:span 2;padding:0;background:url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;min-height:300px}
+.bento-cta{grid-column:span 3;background:var(--accent);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.bento-cta:hover{background:var(--accent);filter:brightness(1.1)}
+.bento-cta .label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;opacity:0.85}
+.bento-cta h3{font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-top:auto;line-height:1}
+.bento-cta .btn{display:inline-flex;align-items:center;gap:10px;margin-top:24px;font-weight:600;font-size:14px;letter-spacing:0.05em}
+.bento-stat{grid-column:span 3;display:flex;flex-direction:column;justify-content:space-between}
+.bento-stat .num{font-family:var(--font-display);font-size:72px;font-weight:700;line-height:1;letter-spacing:-0.04em;color:var(--accent)}
+.bento-stat .label{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:12px}
+@media(max-width:968px){.bento-grid{grid-template-columns:repeat(2,1fr)}.bento-image{grid-column:span 2;grid-row:span 1;min-height:240px}.bento-cta{grid-column:span 2}.bento-stat{grid-column:span 1}}
+@media(max-width:520px){.bento-grid{grid-template-columns:1fr;gap:12px}.bento-image,.bento-cta,.bento-stat{grid-column:span 1}}
+section.block{padding:120px 32px;position:relative;z-index:2}
+.block-inner{max-width:1600px;margin:0 auto}
+@media(max-width:768px){section.block{padding:80px 20px}}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px}
+.section-title{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-0.02em;max-width:700px}
+.section-meta{font-size:14px;color:var(--muted)}
+.section-meta strong{color:var(--accent);font-weight:600}
+.services-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-tile{padding:40px 32px;background:var(--surface);border:1px solid var(--border);border-radius:16px;transition:all .4s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+.svc-tile::after{content:'→';position:absolute;top:32px;right:32px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);transition:all .3s}
+.svc-tile:hover::after{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(-45deg)}
+.svc-tile:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(0,0,0,0.06)}
+.svc-tile .tag{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:64px;display:block}
+.svc-tile h3{font-size:24px;margin-bottom:12px;font-weight:600}
+.svc-tile p{color:var(--muted);font-size:15px;line-height:1.6}
+@media(max-width:968px){.services-masonry{grid-template-columns:1fr}}
+.diff-wrap{padding:120px 32px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.diff-row{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:56px}
+.diff-card{padding:40px 32px;background:var(--bg);border-radius:16px;border:1px solid var(--border)}
+.diff-card .stat{font-family:var(--font-display);font-size:88px;font-weight:700;line-height:1;letter-spacing:-0.05em;color:var(--accent);margin-bottom:24px}
+.diff-card h3{font-size:22px;margin-bottom:12px;font-weight:600}
+.diff-card p{color:var(--muted);font-size:15px;line-height:1.65}
+@media(max-width:968px){.diff-row{grid-template-columns:1fr;gap:20px}.diff-card .stat{font-size:64px}}
+.contact-block{padding:120px 32px;text-align:center}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:720px;margin:48px auto}
+.contact-card{padding:32px 28px;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-align:left;transition:all .3s}
+.contact-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.contact-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:600}
+.contact-value{font-family:var(--font-display);font-size:19px;font-weight:600}
+@media(max-width:640px){.contact-grid{grid-template-columns:1fr}}
+.btn-big{display:inline-flex;align-items:center;gap:12px;padding:20px 40px;background:var(--text);color:var(--bg);font-weight:600;font-size:16px;border-radius:999px;transition:all .3s}
+.btn-big:hover{background:var(--accent);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.15)}
+footer.main{padding:64px 32px 40px;border-top:1px solid var(--border)}
+footer.main .inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1600px;margin:0 auto}
+footer.main .brand{font-family:var(--font-display);font-size:28px;font-weight:700;margin-bottom:12px}
+footer.main .tag{color:var(--muted);font-size:14px;max-width:320px;line-height:1.6}
+footer.main .col h4{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:600}
+footer.main .col p{font-size:14px;line-height:1.7}
+@media(max-width:768px){footer.main{padding:48px 20px 32px}footer.main .inner{grid-template-columns:1fr;gap:32px}}
+</style></head><body>
+<nav><div class="inner"><span class="logo">Zona Brackets</span><a href="https://wa.me/549111570283701" target="_blank" rel="noopener" class="cta">Pedí turno ya</a></div></nav>
+<section class="hero"><div class="hero-inner">
+<div class="hero-top">
+<span class="hero-badge reveal">Consultorio</span>
+<h1 class="reveal d1">Atención dental de excelencia</h1>
+<p class="hero-about reveal d2">En Zona Brackets, nos esforzamos por brindar un servicio de odontología personalizado y de alta calidad en el corazón de la Ciudad Autónoma de Buenos Aires. Nuestro equipo de profesionales capacitados y experimentados se dedica a ofrecer soluciones efectivas y duraderas para cada necesidad dental de nuestros pacientes.</p>
+</div>
+<div class="bento-grid reveal d3">
+<div class="bento-card bento-image"></div>
+<a href="https://wa.me/549111570283701" target="_blank" rel="noopener" class="bento-card bento-cta">
+<div><span class="label">Contacto directo</span></div>
+<div><h3>Pedí turno ya</h3><span class="btn">WhatsApp →</span></div>
+</a>
+<div class="bento-card bento-stat"><div class="num">3.5</div><div class="label">Rating en Google</div></div>
+
+
+</div></div></section>
+<section class="block scroll-reveal"><div class="block-inner">
+<div class="section-head">
+<h2 class="section-title">Servicios diseñados para resolver problemas reales</h2>
+<div class="section-meta"><strong>06</strong> / áreas de trabajo</div>
+</div>
+<div class="services-masonry">
+<div class="svc-tile scroll-reveal" style="transition-delay:0ms">
+<span class="tag">01</span>
+<h3>Ortodoncia</h3><p>Tratamientos de alineación y corrección de dientes con brackets y otros métodos especializados</p>
+</div><div class="svc-tile scroll-reveal" style="transition-delay:60ms">
+<span class="tag">02</span>
+<h3>Implantología</h3><p>Colocación de implantes dentales para reemplazar dientes faltantes y restaurar la función y estética dental</p>
+</div><div class="svc-tile scroll-reveal" style="transition-delay:120ms">
+<span class="tag">03</span>
+<h3>Blanqueamiento dental</h3><p>Procedimientos para aclarar y mejorar el color de los dientes, tanto en consulta como para llevar a casa</p>
+</div><div class="svc-tile scroll-reveal" style="transition-delay:180ms">
+<span class="tag">04</span>
+<h3>Endodoncia</h3><p>Tratamientos de conductos radiculares para aliviar el dolor y preservar la salud de los dientes</p>
+</div><div class="svc-tile scroll-reveal" style="transition-delay:240ms">
+<span class="tag">05</span>
+<h3>Odontología estética</h3><p>Procedimientos para mejorar la apariencia de los dientes y la sonrisa, incluyendo carillas y coronas</p>
+</div><div class="svc-tile scroll-reveal" style="transition-delay:300ms">
+<span class="tag">06</span>
+<h3>Prevención y mantenimiento</h3><p>Revisiones y limpiezas dentales regulares para prevenir problemas y mantener la salud bucal</p>
+</div>
+</div></div></section>
+<section class="diff-wrap scroll-reveal"><div class="block-inner">
+<div class="section-head">
+<h2 class="section-title">Por qué trabajar con nosotros</h2>
+<div class="section-meta">Nuestros <strong>pilares</strong></div>
+</div>
+<div class="diff-row">
+<div class="diff-card scroll-reveal" style="transition-delay:0ms">
+<div class="stat">01</div>
+<h3>Equipo especializado</h3><p>Nuestro equipo de odontólogos y auxiliares cuenta con años de experiencia y capacitación continua para ofrecer los mejores resultados</p>
+</div><div class="diff-card scroll-reveal" style="transition-delay:100ms">
+<div class="stat">02</div>
+<h3>Tecnología avanzada</h3><p>Utilizamos equipo de última generación para garantizar precisión y comodidad en todos nuestros tratamientos</p>
+</div><div class="diff-card scroll-reveal" style="transition-delay:200ms">
+<div class="stat">03</div>
+<h3>Atención personalizada</h3><p>Nos tomamos el tiempo para entender las necesidades y preocupaciones de cada paciente, ofreciendo un trato amable y profesional</p>
+</div>
+</div></div></section>
+<section class="contact-block scroll-reveal"><div class="block-inner">
+<span class="hero-badge">Contacto</span>
+<h2 class="section-title" style="margin:24px auto;text-align:center">Hablemos de tu proyecto</h2>
+
+<a href="https://wa.me/549111570283701" target="_blank" rel="noopener" class="btn-big">Escribinos por WhatsApp →</a>
+</div></section>
+<footer class="main"><div class="inner">
+<div><div class="brand">Zona Brackets</div><p class="tag">En Zona Brackets, nos esforzamos por brindar un servicio de odontología personalizado y de alta calidad en el corazón de la Ciudad Autónoma de Buenos Aires. Nuestro equipo de profesionales capacitados y experimentados se dedica a ofrecer soluciones efectivas y duraderas para cada necesidad dental de nuestros pacientes.</p></div>
+<div class="col"><h4>Contacto</h4></div>
+<div class="col"><h4>Rubro</h4><p>Clínica dental</p></div>
+</div></footer>
+<div class="eterlab-credit">
+  <div class="eterlab-credit-inner">
+    <p>©2026 | diseñado y desarrollado por <a href="https://eterlab.co/" target="_blank" rel="noreferrer">eterlab.</a></p>
+  </div>
+</div>
+<style>
+.eterlab-credit{background:#212121}
+.eterlab-credit-inner{max-width:1536px;margin:0 auto;padding:8px 16px}
+.eterlab-credit p{text-align:center;font-size:12px;color:rgba(255,255,255,0.8);font-family:'Montserrat',sans-serif;font-weight:400;margin:0;letter-spacing:0.01em}
+.eterlab-credit a{font-style:italic;color:rgba(255,255,255,0.9);transition:color .2s;text-decoration:none;font-weight:500}
+.eterlab-credit a:hover{color:#fff}
+</style><a href="https://wa.me/549111570283701" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<style>
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(37,211,102,0.35);transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.wa-float:hover{transform:scale(1.08) rotate(-5deg);box-shadow:0 20px 40px rgba(37,211,102,0.45)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+</style><script>
+(function(){
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body></html>
